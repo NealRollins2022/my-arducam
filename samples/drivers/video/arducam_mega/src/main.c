@@ -41,6 +41,18 @@ LOG_MODULE_REGISTER(main);
 #define SET_LOWPOWER_MODE        0X60
 
 #define MSG_SIZE 12
+
+#define NUM_BUFFERS 3
+#define MAX_SPI_BURST 4096
+#define DMA_BUF_SIZE  (MAX_SPI_BURST + 8)
+
+
+/* DMA-safe buffers for video frames */
+static uint8_t dma_bufs[NUM_BUFFERS][DMA_BUF_SIZE] __aligned(4)
+                         __attribute__((section(".dma")));
+
+/* Video buffer structs */
+struct video_buffer video_buffers[NUM_BUFFERS];
 /* queue to store up to 10 messages (aligned to 4-byte boundary) */
 K_MSGQ_DEFINE(uart_msgq, MSG_SIZE, 10, 4);
 
