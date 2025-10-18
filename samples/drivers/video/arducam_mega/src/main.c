@@ -336,15 +336,12 @@ int main(void)
 		return -1;
 	}
 
-	/* Alloc video buffers and enqueue for capture */
-	for (i = 0; i < ARRAY_SIZE(buffers); i++) {
-		buffers[i] = video_buffer_alloc(1024);
-		if (buffers[i] == NULL) {
-			LOG_ERR("Unable to alloc video buffer");
-			return -1;
-		}
-		video_enqueue(video, VIDEO_EP_OUT, buffers[i]);
-	}
+ /* Initialize video buffers and enqueue */
+    for (i = 0; i < NUM_BUFFERS; i++) {
+        video_buffers[i].buffer  = dma_bufs[i];
+        video_buffers[i].size =  DMA_BUF_SIZE;
+        video_enqueue(video, VIDEO_EP_OUT, &video_buffers[i]);
+    }
 
 	LOG_INF("Mega star");
 
