@@ -237,3 +237,5 @@ Insert screenshot of UART console or terminal showing SPI logs (e.g., initializa
 Zephyr RTOS v2.7.0 Documentation
 nRF Connect SDK
 
+
+  
