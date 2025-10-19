@@ -7,10 +7,16 @@ Through iterative debugging, I achieved stable preview mode and partial high-res
 Capture Mode: Achieved partial high-resolution captures (top half of image displayed), indicating correct data transfer but issues with buffer sizing or rendering.
 Logs: Detailed SPI transaction logs show initialization, command sequences, and CAP_DONE polling.
 
-[SCREENSHOT PLACEHOLDER: Preview Mode]
-Insert screenshot of preview video running on nRF5340 here. Save the image as images/preview.png and add: ![Preview Mode](images/preview.png) after taking the screenshot.[SCREENSHOT PLACEHOLDER: Partial Capture]
-Insert screenshot of partial high-resolution capture (showing top half of image) here. Save the image as images/capture.png and add: ![Partial Capture](images/capture.png) after taking the screenshot.[SCREENSHOT PLACEHOLDER: Log Output]
-Insert screenshot of UART console or terminal showing SPI logs (e.g., initialization, CAP_DONE polling) here. Save the image as images/log.png and add: ![Log Output](images/log.png) after taking the screenshot.Sample Log (from UART console):plaintext
+<!-- [SCREENSHOT PLACEHOLDER: Preview Mode]
+*Insert screenshot of preview video running on nRF5340 here. Save the image as `images/preview.png` and add: `![Preview Mode](images/preview.png)` after taking the screenshot.* -->
+
+<!-- [SCREENSHOT PLACEHOLDER: Partial Capture]
+*Insert screenshot of partial high-resolution capture (showing top half of image) here. Save the image as `images/capture.png` and add: `![Partial Capture](images/capture.png)` after taking the screenshot.* -->
+
+<!-- [SCREENSHOT PLACEHOLDER: Log Output]
+*Insert screenshot of UART console or terminal showing SPI logs (e.g., initialization, CAP_DONE polling) here. Save the image as `images/log.png` and add: `![Log Output](images/log.png)` after taking the screenshot.* -->
+
+Sample Log (from UART console):plaintext
 
 [14:04:53]: Port Connect Success
 [14:04:54]: Command:55 FF AA, Send Success!
@@ -221,10 +227,16 @@ DMA and Memory: Proper buffer alignment and sizing prevent silent failures in hi
 Zephyr Ecosystem: Off-tree modules require careful manifest management to avoid workspace conflicts.
 Debugging Discipline: Logging timestamps, register values, and SPI responses is critical for isolating timing issues.
 
- Screenshots and LogsTo be added:[SCREENSHOT PLACEHOLDER: Preview Mode]
-Insert screenshot of preview video running on nRF5340 here. Save the image as images/preview.png and add: ![Preview Mode](images/preview.png) after taking the screenshot.[SCREENSHOT PLACEHOLDER: Partial Capture]
-Insert screenshot of partial high-resolution capture (showing top half of image) here. Save the image as images/capture.png and add: ![Partial Capture](images/capture.png) after taking the screenshot.[SCREENSHOT PLACEHOLDER: Log Output]
-Insert screenshot of UART console or terminal showing SPI logs (e.g., initialization, CAP_DONE polling) here. Save the image as images/log.png and add: ![Log Output](images/log.png) after taking the screenshot.Example Log:plaintext
+ Screenshots and Logs<!-- [SCREENSHOT PLACEHOLDER: Preview Mode]
+*Insert screenshot of preview video running on nRF5340 here. Save the image as `images/preview.png` and add: `![Preview Mode](images/preview.png)` after taking the screenshot.* -->
+
+<!-- [SCREENSHOT PLACEHOLDER: Partial Capture]
+*Insert screenshot of partial high-resolution capture (showing top half of image) here. Save the image as `images/capture.png` and add: `![Partial Capture](images/capture.png)` after taking the screenshot.* -->
+
+<!-- [SCREENSHOT PLACEHOLDER: Log Output]
+*Insert screenshot of UART console or terminal showing SPI logs (e.g., initialization, CAP_DONE polling) here. Save the image as `images/log.png` and add: `![Log Output](images/log.png)` after taking the screenshot.* -->
+
+Sample Log:plaintext
 
 [00:02:18.909,484] <inf> mega_camera: Starting capture...
 [00:02:18.909,515] <inf> mega_camera: Clearing FIFO...
@@ -238,4 +250,7 @@ Zephyr RTOS v2.7.0 Documentation
 nRF Connect SDK
 
 
+
+
   
+
