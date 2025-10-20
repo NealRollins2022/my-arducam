@@ -1,4 +1,4 @@
-# ⬛ **ARDCUAM MEGA DRIVER PORT TO nRF5340 (ZEPHYR RTOS v2.7.0)**  
+# ⬛ **ARDCUAM MEGA DRIVER PORT TO nRF5340 (ZEPHYR RTOS v3.6.99)**  
 
 ![Light Badge](https://img.shields.io/badge/Theme-Light-grey?style=flat-square)
 ![Dark Badge](https://img.shields.io/badge/Theme-Dark-black?style=flat-square)
@@ -27,7 +27,7 @@
 
 ## ⚡ **Overview**
 
-This repository contains a **ported and modified driver** for the **Arducam Mega camera module**, adapted from its original **Raspberry Pi implementation** to run on the **nRF5340** using **Zephyr RTOS v2.7.0**.
+This repository contains a **ported and modified driver** for the **Arducam Mega camera module**, adapted from its original **Raspberry Pi implementation** to run on the **nRF5340** using **Zephyr RTOS  v3.6.99**.
 
 It showcases **low-level embedded system development** involving:
 - 🧩 **SPI communication**
@@ -83,8 +83,8 @@ The original Raspberry Pi driver relied on different SPI timing and automatic CS
 - 🧠 MCU: **nRF5340 DK**  
 - 📸 Camera: **Arducam Mega 5 MP**  
 - 🔌 Wiring:
-  - SPI SCLK/MOSI/MISO → nRF5340 SPI3  
-  - CS → GPIO P0.06  
+  - SPI SCLK/MOSI/MISO → nRF5340 SPI1  
+  - CS → GPIO P0.25  
   - Power 3.3 V regulated  
 - 🧰 Optional: logic analyzer for SPI/CS timing  
 
@@ -92,8 +92,8 @@ The original Raspberry Pi driver relied on different SPI timing and automatic CS
 
 ## ⬛ **SOFTWARE REQUIREMENTS**
 
-- Zephyr RTOS v2.7.0  
-- nRF Connect SDK toolchain  
+- Zephyr RTOS  v3.6.99  
+- nRF Connect SDK toolchain ver2.7 
 - `west`, CMake 3.20+, Python 3.8+  
 
 **Repositories**
@@ -139,19 +139,19 @@ target_sources(app PRIVATE src/main.c)
 
 **Device-tree overlay**
 ```dts
-&spi3 {
+&spi1 {
     status = "okay";
-    cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&gpio0 25 GPIO_ACTIVE_LOW>;
     arducam_mega0: arducam-mega@0 {
         compatible = "arducam,mega";
-        spi-max-frequency = <8000000>;
+        spi-max-frequency = <4000000>;
     };
 };
 ```
 
 ### 4️⃣ Build and Flash  
 ```bash
-west build -b nrf5340dk_nrf5340_cpuapp path/to/sample
+west build -b nrf5340dk_nrf5340_cpuapp_ns path/to/sample
 west flash
 ```
 
