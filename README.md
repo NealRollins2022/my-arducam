@@ -44,7 +44,8 @@ This work demonstrates my ability to:
 - Debug **hardware-specific timing and transfer issues**
 - Optimize for **real-time embedded performance**
 
-It aligns with the technical demands of **advanced wireless and SDR development**, such as roles at **Shared Spectrum Company** and similar organizations.
+It aligns with the technical demands of **Senior Embedded Software Engineer role**, such as roles at **Two Six
+Technologies** and similar organizations.
 
 ---
 
