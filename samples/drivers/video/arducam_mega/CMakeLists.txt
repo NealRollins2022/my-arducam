@@ -11,4 +11,6 @@ add_compile_options(
     -fno-diagnostics-show-caret
     -fno-diagnostics-show-option
 )
-target_sources(app PRIVATE src/main.c)
+FILE(GLOB app_sources src/*.c)
+target_sources(app PRIVATE ${app_sources})
+target_include_directories(app PRIVATE include)
