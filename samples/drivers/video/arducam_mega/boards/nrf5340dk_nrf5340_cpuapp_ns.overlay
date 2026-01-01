@@ -4,7 +4,7 @@
 
 &uart0 {
     status = "okay";   /* console / logging */
-    current-speed = <9216000>;
+    current-speed = <921600>;
 };
 	
 &spi1 {
