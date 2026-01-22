@@ -1,4 +1,4 @@
-# CMakeLists.txt for Arducam module (C:\ncs\v2.7.0\modules\arducam2\CMakeLists.txt)
+# CMakeLists.txt for Arducam module (C:\ncs\v3.2.1\modules\arducam2\CMakeLists.txt)
 
 
   # Add include directory for drivers/video/arducam_mega.h
