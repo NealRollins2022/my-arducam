@@ -2,7 +2,7 @@ sample:
   name: Arducam Mega Full Featured
 
 common:
-  sysbuild: true
+  sysbuild: false
   build_only: true
   skip: false
   platform_exclude:
