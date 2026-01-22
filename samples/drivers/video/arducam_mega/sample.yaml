@@ -1,13 +1,27 @@
 sample:
   name: Arducam Mega Full Featured
+
+common:
+  sysbuild: true
+  build_only: true
+  skip: false
+  platform_exclude:
+    - native_sim
+
 tests:
-  sample.drivers.video.arducam_mega_full-featured:
-    build_only: true
+  drivers.video.arducam_nord.build:
     tags:
       - video
       - camera
-    platform_allow:
-      - nrf5340dk_nrf5340_cpuapp_ns
-    integration_platforms:
-      - nrf5340dk_nrf5340_cpuapp_ns
+      - drivers
+      - sysbuild
 
+    platform_allow:
+      - nrf5340dk_nrf5340/cpuapp
+
+    integration_platforms:
+      -  nrnrf5340dk_nrf5340/cpuapp
+
+    extra_args:
+      - CONF_FILE=boards/nrf5340dk_nrf5340_cpuapp.conf
+      - DTC_OVERLAY_FILE=boards/nrf5340_nrf5340_cpuapp.overlay
