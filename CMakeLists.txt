@@ -1,6 +1,6 @@
 # CMakeLists.txt for Arducam module (C:\ncs\v2.7.0\modules\arducam2\CMakeLists.txt)
 
-if(CONFIG_SOC_NRF5340_CPUAPP)
+
   # Add include directory for drivers/video/arducam_mega.h
   target_include_directories(zephyr_interface BEFORE INTERFACE
     ${ZEPHYR_CURRENT_MODULE_DIR}/include
@@ -15,4 +15,4 @@ if(CONFIG_SOC_NRF5340_CPUAPP)
   if(EXISTS ${ZEPHYR_CURRENT_MODULE_DIR}/drivers/video/CMakeLists.txt)
     add_subdirectory(drivers/video)
   endif()
-endif()
+
