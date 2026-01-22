@@ -6,7 +6,7 @@
 
 #include <zephyr/device.h>
 #include <zephyr/kernel.h>
-
+#include <zephyr/sys/mem_manage.h>
 #include <drivers/video.h>
 #include <drivers/video/arducam_mega.h>
 
@@ -47,9 +47,9 @@ LOG_MODULE_REGISTER(main);
 #define DMA_BUF_SIZE  (MAX_SPI_BURST + 8)
 
 
-/* DMA-safe buffers for video frames */
-static uint8_t dma_bufs[NUM_BUFFERS][DMA_BUF_SIZE] __aligned(4)
-                         __attribute__((section(".dma")));
+
+/* NUM_BUFFERS x DMA_BUF_SIZE buffer pool */
+static uint8_t dma_bufs[NUM_BUFFERS][DMA_BUF_SIZE] __aligned(4) __noinit;
 
 /* Video buffer structs */
 struct video_buffer video_buffers[NUM_BUFFERS];
@@ -318,7 +318,7 @@ uint8_t uart_available(uint8_t *p)
 int main(void)
 {
 	uint8_t recv_buffer[12] = {0};
-	struct video_buffer *buffers[3];
+
 	int i = 0;
 
 	console = DEVICE_DT_GET(DT_CHOSEN(zephyr_console));
