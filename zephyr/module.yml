@@ -1,4 +1,4 @@
-name: arducam_nord
+name: arducam_mega
 build:
   cmake-ext: true
   kconfig-ext: true
