@@ -1,6 +1,7 @@
 name: arducam_mega
 build:
-  cmake-ext: true
-  kconfig-ext: true
-
+  cmake: .
+  kconfig: Kconfig
+  settings:
+    dts_root: .
 
