@@ -22,6 +22,8 @@ tests:
     integration_platforms:
       - nrf5340dk_nrf5340/cpuapp
 
-    extra_args:
+     extra_args:
       - CONF_FILE=boards/nrf5340dk_nrf5340_cpuapp.conf
       - DTC_OVERLAY_FILE=boards/nrf5340_nrf5340_cpuapp.overlay
+      - CHILD_CONF_FILE=child_image/hci_ipc.conf
+      - -DSHIELD=nrf7002ek
