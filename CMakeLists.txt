@@ -1,6 +1,6 @@
 # CMakeLists.txt for Arducam module (C:\ncs\v3.2.1\modules\arducam2\CMakeLists.txt)
 
-
+if(CONFIG_VIDEO_ARDUCAM_MEGA )
   # Add include directory for drivers/video/arducam_mega.h
   target_include_directories(zephyr_interface BEFORE INTERFACE
     ${ZEPHYR_CURRENT_MODULE_DIR}/include
@@ -15,4 +15,4 @@
   if(EXISTS ${ZEPHYR_CURRENT_MODULE_DIR}/drivers/video/CMakeLists.txt)
     add_subdirectory(drivers/video)
   endif()
-
+  endif()
